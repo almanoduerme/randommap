@@ -1,5 +1,8 @@
 // DOM
 const containerImage = document.querySelector(".container__image");
+const containerMapaSorteado = document.querySelector(
+  ".container__mapaSorteado"
+);
 const boton = document.querySelector("#boton");
 let isWorking = false;
 
@@ -31,15 +34,18 @@ const HandlerRandomMap = () => {
   // Div con las imágenes de los mapas
   const mapaSorteado = document.createElement("img");
 
-  const textoMapaSorteado = document.createElement("p");
-  textoMapaSorteado.classList.add("texto");
-  textoMapaSorteado.textContent = mapsName[valorParseado];
-
   mapaSorteado.classList.add("mapaSorteado");
   mapaSorteado.src = mapas[valorParseado];
   containerImage.innerHTML = "";
   containerImage.appendChild(mapaSorteado);
-  containerImage.appendChild(textoMapaSorteado);
+  //  containerImage.appendChild(textoMapaSorteado);
+
+  const textoMapaSorteado = document.createElement("p");
+  textoMapaSorteado.classList.add("texto");
+  textoMapaSorteado.textContent = mapsName[valorParseado];
+
+   containerMapaSorteado.innerHTML = "";
+   containerMapaSorteado.appendChild(textoMapaSorteado);
 };
 
 const HandlerGenerateMap = () => {
@@ -51,7 +57,7 @@ const HandlerGenerateMap = () => {
     setTimeout(() => {
       clearInterval(intervaloUno);
       isWorking = false;
-    }, 1000 * 2);
+    }, 1000 * 3);
   }
 };
 
