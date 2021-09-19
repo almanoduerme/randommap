@@ -3,6 +3,15 @@ const containerImage = document.querySelector(".container__image");
 const boton = document.querySelector("#boton");
 let isWorking = false;
 
+const mapsName = [
+  "Ascent",
+  "Bind",
+  "Breeze",
+  "Fracture",
+  "Haven",
+  "Icebox",
+  "Split",
+];
 // ARRAY CON MAPAS
 const mapas = [
   "images/ascent.jpg",
@@ -21,10 +30,16 @@ const HandlerRandomMap = () => {
 
   // Div con las imágenes de los mapas
   const mapaSorteado = document.createElement("img");
+
+  const textoMapaSorteado = document.createElement("p");
+  textoMapaSorteado.classList.add("texto");
+  textoMapaSorteado.textContent = mapsName[valorParseado];
+
   mapaSorteado.classList.add("mapaSorteado");
   mapaSorteado.src = mapas[valorParseado];
   containerImage.innerHTML = "";
   containerImage.appendChild(mapaSorteado);
+  containerImage.appendChild(textoMapaSorteado);
 };
 
 const HandlerGenerateMap = () => {
@@ -36,7 +51,7 @@ const HandlerGenerateMap = () => {
     setTimeout(() => {
       clearInterval(intervaloUno);
       isWorking = false;
-    }, 1000 * 3);
+    }, 1000 * 2);
   }
 };
 
