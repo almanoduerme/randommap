@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+#container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 1rem;
+  background-color: #0f0f0f;
+}
+
+.container__text {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 1rem;
+}
+
+.container__text h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  color: white;
+}
+
+.container__text button {
+  padding: 0.8rem 2rem;
+  margin: 1rem 0;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+
+.container__image {
+  height: 50%;
+  margin: 0 auto;
+  text-align: center;
+  color: pink;
+}
+
+.container__image img {
+  max-width: 100%;
+}
