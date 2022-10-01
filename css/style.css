@@ -12,55 +12,59 @@
   background-color: #0f0f0f;
 }
 
-.container__text {
+.textContainer {
   width: 80%;
   margin: 0 auto;
   text-align: center;
   padding: 1rem;
 }
 
-.container__text h1 {
+.textContainer h1 {
   font-weight: 700;
   font-size: 3rem;
   color: white;
 }
 
-.container__text button {
+.textContainer button {
   padding: 0.8rem 2rem;
   margin: 1rem 0;
   font-size: 1rem;
   border-radius: 10px;
 }
 
-.container__image {
+.textContainer button:hover {
+  cursor: pointer;
+}
+
+.IMGContainer {
   height: 50%;
   margin: 0 auto;
   text-align: center;
 }
 
-.container__image img {
+.IMGContainer img {
   max-width: 100%;
 }
 
-#amor {
+#footer {
   text-align: center;
   bottom: fixed;
   background-color: black;
 }
 
-#amor p {
+#footer p {
   color: white;
   font-size: 1.6rem;
   font-weight: bold;
 }
 
-.texto{
+.text{
   color: white;
   font-size: 1.6rem;
   font-weight: bold;
 }
 
-.container__mapaSorteado {
+.winnerMapContainer {
   width: 80%;
   margin: 0 auto;
   text-align: center;

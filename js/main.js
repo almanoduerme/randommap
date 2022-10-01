@@ -1,64 +1,45 @@
 // DOM
-const containerImage = document.querySelector(".container__image");
-const containerMapaSorteado = document.querySelector(
-  ".container__mapaSorteado"
-);
-const boton = document.querySelector("#boton");
+const imageContainer = document.querySelector(".IMGContainer");
+const winnerMapContainer = document.querySelector(".winnerMapContainer");
+const button = document.querySelector("#button");
 let isWorking = false;
 
-const mapsName = [
-  "Ascent",
-  "Bind",
-  "Breeze",
-  "Fracture",
-  "Haven",
-  "Icebox",
-  "Split",
-];
-// ARRAY CON MAPAS
-const mapas = [
-  "images/ascent.jpg",
-  "images/bind.jpg",
-  "images/breeze.jpg",
-  "images/fracture.jpg",
-  "images/haven.jpg",
-  "images/icebox.jpg",
-  "images/split.jpg",
-];
+// Maps
+const mapsName = [ "Ascent", "Bind", "Breeze", "Fracture", "Haven", "Icebox", "Split", "Pearl" ];
 
-const HandlerRandomMap = () => {
+// Maps Images
+const maps = [ "images/ascent.jpg", "images/bind.jpg", "images/breeze.jpg", "images/fracture.jpg", "images/haven.jpg", "images/icebox.jpg", "images/split.jpg", "images/pearl.jpg" ];
+
+const handlerRandomMap = () => {
   // VARIABLES
-  let valor = Math.random() * 7;
-  let valorParseado = parseInt(valor);
+  let value = Math.random() * mapsName.length;
+  let parseValue = parseInt(value);
 
-  // Div con las imágenes de los mapas
-  const mapaSorteado = document.createElement("img");
+  // Create Elements DOM
+  const winningMap = document.createElement('img');
+  winningMap.src = maps[parseValue];
+  imageContainer.innerHTML = '';
+  imageContainer.appendChild(winningMap);
 
-  mapaSorteado.classList.add("mapaSorteado");
-  mapaSorteado.src = mapas[valorParseado];
-  containerImage.innerHTML = "";
-  containerImage.appendChild(mapaSorteado);
-  //  containerImage.appendChild(textoMapaSorteado);
+  const winnerMapText = document.createElement('p');
+  winnerMapText.classList.add('text');
+  winnerMapText.textContent = mapsName[parseValue];
 
-  const textoMapaSorteado = document.createElement("p");
-  textoMapaSorteado.classList.add("texto");
-  textoMapaSorteado.textContent = mapsName[valorParseado];
-
-   containerMapaSorteado.innerHTML = "";
-   containerMapaSorteado.appendChild(textoMapaSorteado);
+  winnerMapContainer.innerHTML = '';
+  winnerMapContainer.appendChild(winnerMapText);
 };
 
-const HandlerGenerateMap = () => {
+const handlerMapGenerator = () => {
   if (!isWorking) {
     isWorking = true;
-    const intervaloUno = setInterval(() => {
-      HandlerRandomMap();
+    const interval = setInterval(() => {
+      handlerRandomMap();
     }, 150);
     setTimeout(() => {
-      clearInterval(intervaloUno);
+      clearInterval(interval);
       isWorking = false;
     }, 1000 * 3);
   }
 };
 
-boton.addEventListener("click", HandlerGenerateMap);
+button.addEventListener("click", handlerMapGenerator);
