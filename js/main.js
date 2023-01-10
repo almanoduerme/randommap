@@ -5,10 +5,10 @@ const button = document.querySelector("#button");
 let isWorking = false;
 
 // Maps
-const mapsName = [ "Ascent", "Bind", "Breeze", "Fracture", "Haven", "Icebox", "Split", "Pearl" ];
+const mapsName = [ "Ascent", "Bind", "Breeze", "Fracture", "Haven", "Icebox", "Split", "Pearl", "Lotus" ];
 
 // Maps Images
-const maps = [ "images/ascent.jpg", "images/bind.jpg", "images/breeze.jpg", "images/fracture.jpg", "images/haven.jpg", "images/icebox.jpg", "images/split.jpg", "images/pearl.jpg" ];
+const maps = [ "images/ascent.jpg", "images/bind.jpg", "images/breeze.jpg", "images/fracture.jpg", "images/haven.jpg", "images/icebox.jpg", "images/split.jpg", "images/pearl.jpg", "images/lotus.jpg" ];
 
 const handlerRandomMap = () => {
   // VARIABLES
